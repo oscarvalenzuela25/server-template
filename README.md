@@ -1,114 +1,239 @@
+# 🚀 NestJS API Server Template
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" />
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+  Template base moderno, robusto y listo para producción para construir APIs REST escalables con <b>NestJS 12</b>, <b>ESM puro (NodeNext)</b>, <b>TypeORM</b>, <b>PostgreSQL</b>, <b>Docker</b>, <b>Swagger</b>, <b>Vitest</b> y <b>Oxlint</b>.
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+<p align="center">
+  <img src="https://img.shields.io/badge/NestJS-12.0-E0234E?style=flat&logo=nestjs&logoColor=white" alt="NestJS 12" />
+  <img src="https://img.shields.io/badge/TypeScript-6.0-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript 6" />
+  <img src="https://img.shields.io/badge/ESM-NodeNext-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="ESM NodeNext" />
+  <img src="https://img.shields.io/badge/PostgreSQL-16-4169E1?style=flat&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/TypeORM-1.1-FE0803?style=flat&logo=typeorm&logoColor=white" alt="TypeORM" />
+  <img src="https://img.shields.io/badge/Docker-Compose-2496ED?style=flat&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Vitest-4.1-6E9F18?style=flat&logo=vitest&logoColor=white" alt="Vitest" />
+  <img src="https://img.shields.io/badge/Oxlint-Rust_Powered-orange?style=flat" alt="Oxlint" />
+</p>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Project setup
+## 📖 Descripción General
 
+Este repositorio está diseñado como un **punto de partida profesional** para cualquier servicio o microservicio backend. Viene preconfigurado con las mejores prácticas arquitectónicas de la industria, tipado estricto en TypeScript, contenedorización con Docker, documentación interactiva autogenerada y un sistema de validación y manejo de errores uniforme.
+
+---
+
+## 🛠️ Stack Tecnológico
+
+| Área | Tecnología | Versión | Propósito / Beneficio |
+| :--- | :--- | :--- | :--- |
+| **Framework** | [NestJS](https://nestjs.com/) | `^12.0.1` | Arquitectura modular escalable e inyección de dependencias. |
+| **Lenguaje** | [TypeScript](https://www.typescriptlang.org/) | `^6.0.2` | Tipado estricto con soporte moderno de módulos `NodeNext`. |
+| **Módulos** | **ESM Nativo** | `"type": "module"` | Estándar oficial de JavaScript moderno para Node.js. |
+| **Base de Datos** | [PostgreSQL](https://www.postgresql.org/) | `16-alpine` | Base de datos relacional de alto rendimiento. |
+| **ORM** | [TypeORM](https://typeorm.io/) | `^1.1.1` | Mapeo objeto-relacional con carga automática de entidades. |
+| **Contenedores** | [Docker & Compose](https://www.docker.com/) | Compose v2 | Orquestación local de PostgreSQL con healthchecks. |
+| **Documentación** | [Swagger / OpenAPI](https://swagger.io/) | `^12.0.1` | Documentación interactiva en `/api/documentation`. |
+| **Validación** | `class-validator` / `class-transformer` | `^0.15` / `^0.5` | Validación automática y estricta de DTOs en tiempo de ejecución. |
+| **Testing** | [Vitest](https://vitest.dev/) | `^4.1.2` | Pruebas unitarias y e2e ultrarrápidas con Vite y soporte nativo ESM. |
+| **Linter & Formato** | [Oxlint](https://oxc.rs/) + [Prettier](https://prettier.io/) | `^1.58` / `^3.4` | Linter en Rust 50-100x más veloz que ESLint tradicional. |
+| **IA Assistant** | **Local Skills & `AGENTS.md`** | 6 skills | Guía y directrices operativas para asistentes de IA (Copilot, Gemini, etc.). |
+
+---
+
+## ✨ Características Principales
+
+### 1. Arquitectura ESM Pura (`NodeNext`)
+El proyecto está completamente adaptado a módulos ECMAScript nativos (`"type": "module"` en `package.json` y `"moduleResolution": "nodenext"` en `tsconfig.json`). Todas las importaciones relativas locales utilizan la extensión `.js` según la especificación moderna de Node.js.
+
+### 2. Base de Datos Lista con Docker
+Incluye un `docker-compose.yml` preconfigurado para levantar PostgreSQL en segundos con healthchecks activos y volúmenes persistentes bajo el prefijo `template_`:
 ```bash
-$ npm install
+docker compose up -d
 ```
 
-## Compile and run the project
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+### 3. Filtro Global de Excepciones Estandarizado (`AllExceptionsFilter`)
+Todas las excepciones de la aplicación (tanto errores HTTP controlados como errores no capturados del servidor o de base de datos) se formatean en una respuesta JSON predecible y amigable para el frontend:
+```json
+{
+  "statusCode": 400,
+  "timestamp": "2026-09-04T02:00:00.000Z",
+  "path": "/api/v1/auth/login",
+  "method": "POST",
+  "error": "Bad Request",
+  "message": [
+    "email must be an email"
+  ]
+}
 ```
 
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+### 4. Interceptor Global de Logs HTTP (`LoggingInterceptor`)
+Mide en tiempo real la duración de cada petición entrante y registra el método, la ruta, el código de estado y la latencia en milisegundos:
+```text
+[HTTP] [GET] /api/v1 200 +3ms
+[HTTP] [POST] /api/v1/users 201 +14ms
 ```
 
-## Deployment
+### 5. Documentación Interactiva OpenAPI (Swagger)
+Swagger está configurado y habilitado por defecto en la ruta:
+👉 `http://localhost:3000/api/documentation`
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+### 6. Validación Global de DTOs
+Configurado con `ValidationPipe` global:
+* `whitelist: true`: Elimina propiedades no deseadas que no estén en el DTO.
+* `forbidNonWhitelisted: true`: Arroja error si el cliente envía propiedades desconocidas.
+* `transform: true`: Convierte automáticamente los payloads a las instancias de clase DTO correspondientes.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### 7. Integración con Agentes de IA (`AGENTS.md`)
+Incluye una matriz de decisión en `AGENTS.md` con **6 habilidades locales** en `skills/`:
+* `nestjs-best-practices`: Patrones de módulos, inyección de dependencias y servicios.
+* `nodejs-backend-patterns`: Resiliencia, middleware, background jobs y auth.
+* `nodejs-best-practices`: Toma de decisiones de alto nivel en Node.js.
+* `typescript-advanced-types`: Genéricos, mapped types y tipado avanzado sin `any`.
+* `vitest`: Testing unitario y mocks con `vi.fn()`.
+* `oxlint`: Verificación y corrección estricta de código en milisegundos.
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+---
+
+## 📁 Estructura del Proyecto
+
+```text
+server-template/
+├── .env                     # Variables de entorno locales
+├── .env.example             # Plantilla de variables de entorno
+├── docker-compose.yml       # Orquestación de PostgreSQL (template_postgres)
+├── nest-cli.json            # Configuración de Nest CLI
+├── package.json             # Scripts y dependencias del proyecto
+├── oxlint.json              # Reglas de linting de alta velocidad
+├── tsconfig.json            # Configuración de TypeScript (NodeNext / ESM)
+├── vitest.config.ts         # Configuración de Vitest para pruebas unitarias
+├── vitest.config.e2e.ts     # Configuración de Vitest para pruebas e2e
+├── AGENTS.md                # Directrices y matriz de skills para agentes IA
+├── skills/                  # Catálogo de skills locales (Nest, Node, TS, etc.)
+│   ├── nestjs-best-practices/
+│   ├── nodejs-backend-patterns/
+│   ├── nodejs-best-practices/
+│   ├── oxlint/
+│   ├── typescript-advanced-types/
+│   └── vitest/
+├── src/
+│   ├── common/              # Código transversal y utilidades compartidas
+│   │   ├── filters/         # AllExceptionsFilter (manejo global de errores)
+│   │   └── interceptors/   # LoggingInterceptor (registro de peticiones HTTP)
+│   ├── config/              # Configuraciones de la aplicación
+│   │   ├── db.config.ts     # Configuración tipada de TypeORM con PostgreSQL
+│   │   └── envs.config.ts   # Carga y parseo seguro de variables con dotenv
+│   ├── app.controller.ts    # Controlador raíz de prueba
+│   ├── app.module.ts        # Módulo raíz de la aplicación
+│   ├── app.service.ts       # Servicio base
+│   └── main.ts              # Punto de entrada (bootstrap, CORS, Swagger, Pipes)
+└── test/
+    └── app.e2e-spec.ts      # Pruebas End-to-End con Vitest y Supertest
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+---
 
-## Observability
+## 🚀 Inicio Rápido
 
-In production applications, observability is essential for understanding how your system behaves, detecting issues early, and maintaining reliable performance.
+### Prerrequisitos
+* **Node.js**: `>= 20.x` (Recomendado Node 22 o superior).
+* **Docker y Docker Compose**: Instalado y en ejecución.
 
-[NestJS Observe](https://observe.nestjs.com) automatically instruments your NestJS application, giving you deep visibility into your system with minimal setup:
+### 1. Clonar e Instalar Dependencias
+```bash
+git clone <url-del-repositorio>
+cd server-template
+npm install
+```
 
-- **Distributed tracing:** Follow requests across services and understand how they flow through your system.
-- **Waterfall analysis:** Visualize request execution and identify slow operations, bottlenecks, and unexpected delays.
-- **Performance analysis:** Analyze application performance in real time and quickly pinpoint areas that need optimization.
-- **Metrics:** Track key application and infrastructure metrics to understand system health and performance trends.
-- **Logging:** Centralize and correlate logs with traces and other telemetry to make debugging easier.
-- **Error tracking:** Detect errors quickly and investigate their root causes with the surrounding context.
-- **SLA monitoring:** Track service-level objectives and identify when your application is approaching or exceeding defined thresholds.
-- **Alarms and alerts:** Set up alerts for critical errors, performance degradation, SLA violations, and other anomalies so your team can react quickly.
+### 2. Configurar Variables de Entorno
+Copia el archivo de ejemplo a `.env` (ya viene preconfigurado con valores listos para usar):
+```bash
+cp .env.example .env
+```
 
-## Resources
+Contenido por defecto de `.env`:
+```env
+PORT=3000
 
-Check out a few resources that may come in handy when working with NestJS:
+POSTGRES_DB=template_db
+POSTGRES_PORT=5432
+POSTGRES_HOST=localhost
+POSTGRES_USER=template_user
+POSTGRES_PASSWORD=template_password
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Auto-instrument your application with [NestJS Observer](https://observer.nestjs.com). Distributed tracing, metrics, and logging made easy. Error tracking and performance monitoring for your NestJS applications.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### 3. Iniciar la Base de Datos con Docker
+```bash
+docker compose up -d
+```
+*(Para detenerla: `docker compose down`)*
 
-## Support
+### 4. Ejecutar la Aplicación en Modo Desarrollo
+```bash
+npm run start:dev
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Una vez iniciada, verás en la consola:
+```text
+[Bootstrap] 🚀 Application running on: http://localhost:3000/api/v1
+[Bootstrap] 📚 Swagger documentation: http://localhost:3000/api/documentation
+```
 
-## Stay in touch
+---
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## 🧪 Pruebas y Calidad de Código
 
-## License
+### Ejecutar Pruebas (Vitest)
+```bash
+# Pruebas unitarias
+npm run test
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+# Pruebas en modo interactivo / watch
+npm run test:watch
+
+# Reporte de cobertura de código
+npm run test:cov
+
+# Pruebas End-to-End (e2e)
+npm run test:e2e
+```
+
+### Linter y Formato
+```bash
+# Ejecutar Oxlint (ultrarrápido)
+npm run lint
+
+# Formatear código con Prettier
+npm run format
+
+# Verificar tipos con TypeScript sin emitir archivos
+npx tsc --noEmit
+```
+
+### Compilación para Producción
+```bash
+npm run build
+npm run start:prod
+```
+
+---
+
+## 📝 Convenciones para el Desarrollo
+
+1. **Importaciones relativas:** Recuerda incluir siempre la extensión `.js` en imports locales debido a la resolución `NodeNext` de ESM:
+   ```typescript
+   import { postgresConfig } from './config/db.config.js'; // ✅ Correcto
+   ```
+2. **Entidades TypeORM:** Gracias a `autoLoadEntities: true` en `db.config.ts`, cualquier entidad registrada en un módulo mediante `TypeOrmModule.forFeature([MiEntidad])` será descubierta y sincronizada automáticamente sin necesidad de listarla manualmente en el módulo raíz.
+3. **Prefijo de API:** Todas las rutas expuestas por la API responderán bajo el prefijo `/api/v1/*`.
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia [UNLICENSED](LICENSE). Puedes adaptarlo y usarlo libremente como base para tus proyectos.
